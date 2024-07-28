@@ -23,10 +23,25 @@ function generateRecipe(event) {
     let recipeElement = document.querySelector("#recipe");
 
     recipeElement.classList.remove("hidden");
-    recipeElement.innerHTML = `<div class="blink-soft">Generating a Plant Based Meal Plan for you...</div>`;
+    recipeElement.innerHTML = `<div class="blink-soft">Generating a Plant 🌱 Based Meal Plan for you...</div>`;
 
-    axios.get(apiURL).then(displayRecipe);
+    console.log("API URL:", apiURL);
+
+    axios.get(apiURL)
+        .then(displayRecipe)
+        .catch((error) => {
+            console.error("Error generating recipe:", error);
+            // Log the error response for more details
+            if (error.response) {
+                console.error("Error response data:", error.response.data);
+                console.error("Error response status:", error.response.status);
+                console.error("Error response headers:", error.response.headers);
+            }
+            recipeElement.classList.remove("hidden");
+            recipeElement.innerHTML = 'Sorry, there was an error generating your recipe. Please try again.';
+        });
 }
 
 let recipeFormElement = document.querySelector("#meal-planner-form");
 recipeFormElement.addEventListener("submit", generateRecipe);
+
