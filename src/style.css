@@ -118,12 +118,11 @@ form {
     border-left: 6px solid #a66ea1;
     border-radius: 10px;
     box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.08);
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.5;
     margin-bottom: 30px;
     padding: 20px;
 }
-
 
 .hidden {
     display: none;
@@ -136,21 +135,6 @@ form {
     50% {
         opacity: 0;
     }
-}
-
-.loading-bar {
-    background-color: #f1f1f1;
-    border-radius: 5px;
-    height: 10px;
-    overflow: hidden;
-    width: 100%;
-}
-
-.progress {
-    background-color: #dbcdfb;
-    height: 100%;
-    transition: width 0.5s;
-    width: 0;
 }
 
 footer {

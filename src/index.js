@@ -1,10 +1,4 @@
 function displayRecipe(response) {
-    let recipeElement = document.querySelector("#recipe");
-    let loadingBar = document.querySelector("#loading-bar");
-    loadingBar.classList.add("hidden"); 
-    recipeElement.classList.remove("hidden");
-    recipeElement.innerHTML = '';
-
     new Typewriter("#recipe", {
         strings: response.data.answer,
         autoStart: true,
@@ -27,28 +21,11 @@ function generateRecipe(event) {
     let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
     let recipeElement = document.querySelector("#recipe");
-    let loadingBar = document.querySelector("#loading-bar");
-    let progress = document.querySelector("#progress");
 
-    recipeElement.classList.add("hidden");
-    loadingBar.classList.remove("hidden");
-    progress.style.width = '0%';
+    recipeElement.classList.remove("hidden");
+    recipeElement.innerHTML = `<div class="blink-soft">Generating a Plant Based Meal Plan for you...</div>`;
 
-    let width = 0;
-    let interval = setInterval(() => {
-        if (width >= 100) {
-            clearInterval(interval);
-        } else {
-            width += 10;
-            progress.style.width = `${width}%`;
-        }
-    }, 500);
-
-    axios.get(apiURL).then(displayRecipe).catch(() => {
-        loadingBar.classList.add("hidden");
-        recipeElement.classList.remove("hidden");
-        recipeElement.innerHTML = 'Sorry, there was an error generating your recipe. Please try again.';
-    });
+    axios.get(apiURL).then(displayRecipe);
 }
 
 let recipeFormElement = document.querySelector("#meal-planner-form");
