@@ -1,3 +1,10 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background: url('healthy-bowl.jpg') no-repeat center center fixed; 
     background-size: cover;
@@ -7,40 +14,66 @@ body {
 }
 
 a {
-    color: #d2a3cb;
+    color: #fff0dd;
 }
 
 .container {
-    flex: 1;
-    margin: 120px auto;
+    margin: 0 auto;
     max-width: 600px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 120px;
+    padding-bottom: 60px;
+    position: relative;
+    z-index: 1;
 }
 
 header {
-    margin-bottom: 30px;
+    text-align: center; 
+    line-height: 1.5;
+    /* text-shadow: 1px 1px 3px #2e2979; */
+    margin-bottom: 40px;
+    z-index: 1;
+    background-color: rgba(255, 240, 221, 0.6);
+    border-radius: 10px;
+    padding: 0 25px;
+    color: #c54f67;
 }
 
 h1 {
-    text-align: center;
-    font-weight: 650;
-    font-size: 38px;
-    line-height: 1.5;
-    color: #fff0dd;
-    text-shadow: 1px 1px 2px #2e2979;
+    /* text-align: center; */
+    font-weight: 650700;
+    font-size: 44px;
+    /* line-height: 1.5; */
+    /* color: #c76c86; */
+    
+    /* text-shadow: 1px 1px 2px #2e2979;
+    margin-bottom: 40px; */
 }
 
 h2 {
-    text-align: center;
+    /* text-align: center; */
     font-weight: 500;
     font-size: 24px;
-    color: #dbcdfb;
-    margin-bottom: 60px;
-    text-shadow: 1px 1px 2px #2e2979;
+    /* color: #cb7e8e; */
+    /* margin-bottom: 60px;
+    text-shadow: 1px 1px 2px #2e2979; */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(186, 184, 184, 0.5); /* Adjust transparency as needed */
+    z-index: 0;
 }
 
 .form-container {
     padding: 30px;
-    background-color: #fff0dd;
+    background-color: rgba(255, 240, 221, 0.6);
     box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.08);
     border-radius: 10px;
     margin-bottom: 30px;
@@ -49,57 +82,60 @@ h2 {
 form {
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
+    gap: 10px;
 }
 
-.macro-inputs {
+/* .meal-planner-form {
     display: flex;
     justify-content: space-between;
-    margin: 10px 0;
-}
+    margin-bottom: 20px;
+} */
 
 .macro {
-    width: 30%;
+    padding: 10px;
+    border: 1px solid rgba(39, 33, 66, 0.6);
+    border-radius: 50px;
+    font-size: 16px;
 }
 
 .hint {
     line-height: 1.5;
-    font-size: 12px;
+    font-size: 14px;
     opacity: 0.6;
+    margin-bottom: 20px;
 }
 
 .instructions {
     padding: 10px;
-    border: 1px solid rgba(39, 33, 66, 0.5);
+    border: 1px solid rgba(39, 33, 66, 0.6);
     border-radius: 50px;
     line-height: 20px;
     color: #272044;
+    font-size: 16px;
 }
 
 .submit-button {
     margin-top: 10px;
-    background-color: #ea4b6a;
+    background-color: #c64f67;
     color: white;
     border: none;
     border-radius: 50px;
     padding: 14px 24px;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .recipe {
-    font-size: 14px;
-    background-color: white;
+    font-size: 12px;
+    background-color: rgba(255, 240, 221, 0.8);
     padding: 20px;
     line-height: 1.5;
-    border-left: 3px solid #885df1;
+    border-left: 3px solid #ea4b6a;
     box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.08);
     border-radius: 10px;
     margin-bottom: 30px;
 }
 
-.recipe strong {
-    color:#885df1;
-}
 
 .hidden {
     display: none;
@@ -124,7 +160,7 @@ form {
 
 .progress {
     height: 100%;
-    background-color: #885df1;
+    background-color: #dbcdfb;
     width: 0;
     transition: width 0.5s;
 }
@@ -132,5 +168,8 @@ form {
 footer {
     color: #fff0dd;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
+    width: 100%;
+    padding: 30px 0;
+    z-index: 1;
 }
