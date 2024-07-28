@@ -6,15 +6,20 @@ html, body {
 }
 
 body {
-    /* background-size: cover; */
     background: url('healthy-bowl.jpg') no-repeat center center fixed; 
     display: flex;
     flex-direction: column;
     font-family: "Raleway", sans-serif;
 }
 
-a {
-    color: #fff0dd;
+.overlay {
+    background: rgba(186, 184, 184, 0.5); /* Adjust transparency as needed */
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
 }
 
 .container {
@@ -27,6 +32,10 @@ a {
     padding-top: 120px;
     position: relative;
     z-index: 1;
+}
+
+a {
+    color: #fff0dd;
 }
 
 header {
@@ -49,16 +58,6 @@ h2 {
     font-size: 22px;
 }
 
-.overlay {
-    background: rgba(186, 184, 184, 0.5); /* Adjust transparency as needed */
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 0;
-}
-
 .form-container {
     background-color: rgba(255, 240, 221, 0.7);
     border-radius: 10px;
@@ -71,6 +70,15 @@ form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.instructions {
+    border-radius: 50px;
+    border: 1px solid rgba(39, 33, 66, 0.6);
+    color: #272044;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 10px;
 }
 
 .macro {
@@ -87,15 +95,6 @@ form {
     opacity: 0.6;
 }
 
-.instructions {
-    border-radius: 50px;
-    border: 1px solid rgba(39, 33, 66, 0.6);
-    color: #272044;
-    font-size: 16px;
-    line-height: 20px;
-    padding: 10px;
-}
-
 .submit-button {
     background-color: #a66ea1;
     border-radius: 50px;
@@ -109,7 +108,7 @@ form {
 
 .recipe {
     background-color: rgba(255, 240, 221, 0.8);
-    border-left: 3px solid #ea4b6a;
+    border-left: 6px solid #a66ea1;
     border-radius: 10px;
     box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.08);
     font-size: 12px;
