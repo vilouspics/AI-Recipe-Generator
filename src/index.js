@@ -23,7 +23,7 @@ function generateRecipe(event) {
 
     let apiKey = "00beca703bc44c5a7o5477ctfdbf0239";
     let prompt = `Generate a vegan meal plan for a day with ${calorieInput.value} calories, consisting of breakfast, lunch, dinner, and snacks. The macronutrient distribution should be ${carbsInput.value}% carbs, ${proteinInput.value}% protein, and ${fatInput.value}% fat.`;
-    let context = "YYou are a vegan meal planner AI specialized in creating daily meal plans for athletes and health-conscious individuals. The meal plan should be tasty, nutritious, and align with the user's calorie and macronutrient goals. Each meal (breakfast, lunch, dinner, and snacks) should include a detailed recipe with ingredients and preparation steps.";
+    let context = "You are a vegan meal planner AI specialized in creating daily meal plans for athletes and health-conscious individuals. The meal plan should be tasty, nutritious, and align with the user's calorie and macronutrient goals. Each meal (breakfast, lunch, dinner, and snacks) should include a detailed recipe with ingredients and preparation steps.";
     let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
     let recipeElement = document.querySelector("#recipe");
